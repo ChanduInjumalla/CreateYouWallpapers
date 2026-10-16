@@ -1,0 +1,67 @@
+/* ============================================================
+   GALLERY CARD — Image card with improved caption visibility
+   ============================================================ */
+
+.gallery-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--border-radius-md);
+  text-decoration: none;
+  aspect-ratio: var(--card-aspect, 4/3);
+  transition: transform 0.4s ease;
+}
+
+.gallery-card:hover {
+  transform: scale(1.02);
+}
+
+.gallery-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-card:hover .gallery-card__img {
+  transform: scale(1.05);
+}
+
+/* Improved gradient overlay — subtle at top, darker at bottom for text readability */
+.gallery-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.2) 35%,
+    transparent 60%
+  );
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-card:hover .gallery-card__overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.25) 40%,
+    transparent 65%
+  );
+}
+
+/* Caption — white, clearly readable, elegant weight */
+.gallery-card__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-md) var(--space-md) var(--space-md);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: var(--font-size-sm);
+  font-weight: 450;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  z-index: 1;
+}

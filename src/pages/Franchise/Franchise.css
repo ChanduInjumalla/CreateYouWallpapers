@@ -1,0 +1,242 @@
+/* ============================================================
+   FRANCHISE PAGE STYLES
+   ============================================================ */
+
+.fran-page {
+  padding-top: calc(var(--header-height) + 2rem);
+  padding-bottom: var(--space-5xl);
+  background-color: var(--color-bg);
+  min-height: 100vh;
+}
+
+.fran-hero {
+  text-align: center;
+  max-width: 840px;
+  margin: 0 auto var(--space-3xl);
+}
+
+.fran-hero__badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  background: rgba(201, 169, 110, 0.12);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  margin-bottom: var(--space-sm);
+}
+
+.fran-hero__title {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+  margin-bottom: var(--space-xs);
+  line-height: 1.2;
+}
+
+.fran-hero__sub {
+  font-size: 1.05rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+/* Metrics */
+.fran-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: var(--space-4xl);
+}
+
+.fran-metric-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 32px 28px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  text-align: center;
+}
+
+.fran-metric-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-gold-dark);
+  margin-bottom: 6px;
+}
+
+.fran-metric-card strong {
+  display: block;
+  font-size: 1.05rem;
+  color: var(--color-charcoal);
+  margin-bottom: 8px;
+}
+
+.fran-metric-card p {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Split layout */
+.fran-split {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 40px;
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
+  padding: 44px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+}
+
+.fran-info h2 {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  color: var(--color-charcoal);
+  margin-bottom: 24px;
+}
+
+.fran-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fran-benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.fran-benefit-icon {
+  font-size: 1.6rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #F8F5EE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fran-benefit-item strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--color-charcoal);
+  margin-bottom: 4px;
+}
+
+.fran-benefit-item p {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Form Card */
+.fran-form-card {
+  background: #2D2330;
+  color: #FFFFFF;
+  border-radius: 16px;
+  padding: 36px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fran-form-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+}
+
+.fran-form-card p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+}
+
+.fran-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fran-field label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 6px;
+}
+
+.fran-field input,
+.fran-field select {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  background: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #1F2937;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.fran-field input:focus,
+.fran-field select:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.3);
+}
+
+.fran-grid-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.fran-submit-btn {
+  width: 100%;
+  height: 48px;
+  border-radius: 9999px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+.fran-success {
+  background: rgba(45, 125, 70, 0.2);
+  border: 1px solid #48BB78;
+  padding: 24px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.fran-success h4 {
+  color: #6EE7B7;
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.fran-success p {
+  color: #FFFFFF;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 1024px) {
+  .fran-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  .fran-split {
+    grid-template-columns: 1fr;
+    padding: 28px;
+  }
+}

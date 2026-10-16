@@ -1,0 +1,248 @@
+/* ==========================================================================
+   Partner Page Styles
+   ========================================================================== */
+
+.partner-page {
+  padding-top: calc(var(--header-height, 120px) + 2rem);
+  padding-bottom: 5rem;
+  background-color: var(--color-bg, #FAF8F5);
+  min-height: 100vh;
+}
+
+.partner-hero {
+  text-align: center;
+  max-width: 820px;
+  margin: 1.5rem auto 3.5rem;
+}
+
+.partner-hero__badge {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-gold, #C9A96E);
+  background: rgba(201, 169, 110, 0.1);
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(201, 169, 110, 0.25);
+  margin-bottom: 1rem;
+}
+
+.partner-hero__title {
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-charcoal, #18181B);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.partner-hero__sub {
+  font-size: 1.05rem;
+  color: var(--color-text-muted, #71717A);
+  line-height: 1.6;
+}
+
+/* Perks Grid */
+.partner-perks-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.partner-perk-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.partner-perk-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(201, 169, 110, 0.12);
+  border-color: rgba(201, 169, 110, 0.35);
+}
+
+.partner-perk-icon {
+  font-size: 2.2rem;
+  margin-bottom: 1.25rem;
+  display: inline-block;
+}
+
+.partner-perk-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-charcoal, #18181B);
+  margin-bottom: 0.65rem;
+}
+
+.partner-perk-card p {
+  font-size: 0.92rem;
+  color: var(--color-text-muted, #71717A);
+  line-height: 1.55;
+}
+
+/* Split Section */
+.partner-split {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3.5rem;
+  align-items: start;
+  background: #FFFFFF;
+  padding: 3.5rem;
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+.partner-split-info h2 {
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  color: var(--color-charcoal, #18181B);
+  margin-bottom: 1.25rem;
+  line-height: 1.25;
+}
+
+.partner-split-info p {
+  color: var(--color-text-muted, #71717A);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.partner-check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.partner-check-list li {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-charcoal, #27272A);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Form Card */
+.partner-form-card {
+  background: var(--color-bg, #FAF8F5);
+  padding: 2.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(201, 169, 110, 0.2);
+}
+
+.partner-form-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-charcoal, #18181B);
+  margin-bottom: 0.5rem;
+}
+
+.partner-form-card p {
+  font-size: 0.92rem;
+  color: var(--color-text-muted, #71717A);
+  margin-bottom: 1.75rem;
+}
+
+.partner-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.partner-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.partner-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-charcoal, #27272A);
+}
+
+.partner-field input,
+.partner-field select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #FFFFFF;
+  font-size: 0.95rem;
+  color: #18181B;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.partner-field input:focus,
+.partner-field select:focus {
+  border-color: var(--color-gold, #C9A96E);
+  box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.15);
+}
+
+.partner-grid-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.partner-submit-btn {
+  width: 100%;
+  padding: 0.95rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+.partner-success {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.partner-success h4 {
+  color: #16A34A;
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.partner-success p {
+  color: #52525B;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .partner-perks-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .partner-split {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .partner-perks-grid {
+    grid-template-columns: 1fr;
+  }
+  .partner-grid-row {
+    grid-template-columns: 1fr;
+  }
+  .partner-form-card {
+    padding: 1.5rem;
+  }
+}
