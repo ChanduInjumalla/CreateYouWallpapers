@@ -423,6 +423,14 @@
   white-space: nowrap;
 }
 
+.cat-btn-full {
+  display: inline;
+}
+
+.cat-btn-short {
+  display: none;
+}
+
 /* Left CTA: Outline Button (Curvy) */
 .cat-card-btn--outline {
   background: transparent;
@@ -1212,21 +1220,274 @@
     height: 1.85rem;
   }
 
+  /* Trending Floor — 2-2 Layout */
   .cat-page__trending-container {
-    padding: var(--space-lg);
+    padding: 18px 14px;
+    border-radius: 12px;
+    margin-bottom: 28px;
+  }
+
+  .cat-page__trending-header {
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .cat-page__flame-badge {
+    font-size: 1.25rem;
+  }
+
+  .cat-page__trending-titles h2 {
+    font-size: 1.15rem;
+    line-height: 1.25;
+    margin-bottom: 2px;
+  }
+
+  .cat-page__trending-titles p {
+    font-size: 0.75rem;
+    line-height: 1.35;
   }
 
   .cat-page__trending-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .cat-trending-card {
+    border-radius: 10px;
   }
 
   .cat-trending-card:last-child {
     display: flex;
   }
 
+  /* If 3rd card in a 3-item list, stretch across both columns neatly */
+  .cat-trending-card:nth-child(3):last-child {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    align-items: stretch;
+  }
+
+  .cat-trending-card:nth-child(3):last-child .cat-trending-card__img-wrap {
+    aspect-ratio: auto;
+    height: 100%;
+  }
+
+  .cat-trending-card__badge {
+    top: 8px;
+    left: 8px;
+    font-size: 0.62rem;
+    padding: 3px 8px;
+    border-radius: 12px;
+  }
+
+  .cat-trending-card__body {
+    padding: 10px 10px 12px;
+  }
+
+  .cat-trending-card__title {
+    font-size: 0.88rem;
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+
+  .cat-trending-card__sub {
+    font-size: 0.72rem;
+    line-height: 1.3;
+    margin-bottom: 6px;
+    -webkit-line-clamp: 2;
+  }
+
+  .cat-trending-card__footer {
+    padding-top: 6px;
+    margin-top: auto;
+  }
+
+  .cat-trending-card__spec {
+    font-size: 0.68rem;
+  }
+
+  .cat-trending-card__cta {
+    font-size: 0.72rem;
+    padding: 4px 6px;
+  }
+
+  /* Main 2-Column Product Grid */
   .cat-page__grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 10px;
+  }
+
+  .cat-design-card {
+    border-radius: 10px;
+  }
+
+  .cat-design-card__wishlist-btn {
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .cat-design-card__wishlist-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .cat-design-card__content {
+    padding: 10px 10px 12px;
+  }
+
+  .cat-design-card__title {
+    font-size: 0.85rem;
+    line-height: 1.25;
+    margin-bottom: 4px;
+    height: auto;
+    min-height: 2.15rem;
+    -webkit-line-clamp: 2;
+  }
+
+  .cat-design-card__spec {
+    font-size: 0.7rem;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    -webkit-line-clamp: 1;
+  }
+
+  .cat-design-card__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: auto;
+  }
+
+  /* Product Action Buttons — No clipping, compact font */
+  .cat-card-btn {
+    width: 100%;
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 7px 4px;
+    line-height: 1.2;
+    text-align: center;
+    white-space: normal;
+    word-break: normal;
+    border-radius: 9999px;
+    box-sizing: border-box;
+  }
+
+  .cat-card-btn--outline {
+    border-width: 1.5px;
+  }
+
+  .cat-card-btn--solid {
+    border-width: 1.5px;
+  }
+
+  /* In-Grid Promotional Cards ("Ads in section") */
+  .cat-promo-card {
+    min-height: auto;
+    padding: 14px 10px 12px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .cat-promo-card__badge {
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+    padding: 2px 6px;
+    background: rgba(201, 169, 110, 0.15);
+    border-radius: 4px;
+  }
+
+  .cat-promo-card__headline {
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 6px;
+  }
+
+  .cat-promo-card__subtext {
+    font-size: 0.72rem;
+    line-height: 1.35;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .cat-promo-card__btn {
+    width: 100%;
+    padding: 7px 8px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    margin-top: auto;
+  }
+
+  /* In-Grid Brand Promise Card */
+  .cat-promise-card {
+    min-height: auto;
+    padding: 14px 10px 12px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .cat-promise-card__title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+
+  .cat-promise-card__list {
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .cat-promise-item {
+    gap: 6px;
+  }
+
+  .cat-promise-item__icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .cat-promise-item__icon svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .cat-promise-item__text {
+    font-size: 0.72rem;
+    line-height: 1.25;
+    font-weight: 500;
+  }
+
+  .cat-promise-card__bottom {
+    gap: 6px;
+    margin-top: auto;
+  }
+
+  .cat-promise-card__btn {
+    width: 100%;
+    padding: 7px 8px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+
+  .cat-promise-card__link {
+    font-size: 0.68rem;
+    text-align: center;
   }
 
   .cat-quote-split__visual {
@@ -1244,24 +1505,64 @@
 
   .cat-related-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cat-btn-full {
+    display: none;
   }
 
-  .cat-design-card__actions {
-    grid-template-columns: 1fr;
-    gap: 6px;
-  }
-
-  .cat-btn--primary,
-  .cat-btn--secondary {
-    padding: 9px 8px;
-    font-size: 0.72rem;
+  .cat-btn-short {
+    display: inline;
   }
 }
 
 @media (max-width: 430px) {
   .cat-page__grid {
     gap: 8px;
+  }
+
+  .cat-page__trending-grid {
+    gap: 8px;
+  }
+
+  .cat-trending-card:nth-child(3):last-child {
+    grid-template-columns: 100px 1fr;
+  }
+
+  .cat-design-card__content {
+    padding: 8px 6px 10px;
+  }
+
+  .cat-card-btn {
+    font-size: 0.65rem;
+    padding: 6px 3px;
+  }
+
+  .cat-promo-card {
+    padding: 12px 8px 10px;
+  }
+
+  .cat-promo-card__headline {
+    font-size: 0.88rem;
+  }
+
+  .cat-promo-card__subtext {
+    font-size: 0.68rem;
+  }
+
+  .cat-promise-card {
+    padding: 12px 8px 10px;
+  }
+
+  .cat-promise-card__title {
+    font-size: 0.88rem;
+  }
+
+  .cat-promise-item__text {
+    font-size: 0.66rem;
   }
 
   .cat-related-grid {

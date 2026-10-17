@@ -220,7 +220,8 @@ export default function CategoryPageTemplate({
               className="cat-card-btn cat-card-btn--outline"
               onClick={() => openConsultation(design, 'consultation')}
             >
-              Book Free Consultation
+              <span className="cat-btn-full">Book Free Consultation</span>
+              <span className="cat-btn-short">Free Consultation</span>
             </button>
             <button
               className="cat-card-btn cat-card-btn--solid"
