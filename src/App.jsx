@@ -4,8 +4,7 @@ import { ScrollToTop } from './utils/seo';
 /* Layout */
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
-import MobileBottomBar from './components/MobileBottomBar/MobileBottomBar';
+import FloatingActions from './components/FloatingActions/FloatingActions';
 
 /* Pages */
 import Home from './pages/Home/Home';
@@ -156,8 +155,7 @@ export default function App() {
       </Routes>
 
       <Footer />
-      <WhatsAppButton />
-      <MobileBottomBar />
+      <FloatingActions />
     </BrowserRouter>
   );
 }

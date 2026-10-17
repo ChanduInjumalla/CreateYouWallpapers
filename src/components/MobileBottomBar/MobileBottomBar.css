@@ -44,7 +44,5 @@
 }
 
 @media (max-width: 768px) {
-  .mobile-bar { display: flex; }
-  /* Add padding to body bottom so content isn't hidden */
-  body { padding-bottom: 64px; }
+  .mobile-bar { display: none; }
 }

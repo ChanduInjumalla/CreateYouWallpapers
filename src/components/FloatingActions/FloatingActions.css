@@ -1,0 +1,91 @@
+/* ============================================================
+   FLOATING ACTION BUTTONS (FAB) — CALL & WHATSAPP
+   Sleek bottom-right floating circular action buttons
+   ============================================================ */
+
+.floating-actions {
+  position: fixed;
+  bottom: 24px;
+  right: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.floating-btn {
+  pointer-events: auto;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Call Button — Brand Architectural Gold */
+.floating-btn--call {
+  background: linear-gradient(135deg, #C5A059 0%, #A67C46 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 18px rgba(184, 149, 106, 0.5), 0 2px 6px rgba(0, 0, 0, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+}
+
+.floating-btn--call:hover {
+  transform: scale(1.08);
+  background: linear-gradient(135deg, #D4AF65 0%, #B3884E 100%);
+  box-shadow: 0 6px 24px rgba(184, 149, 106, 0.65), 0 3px 8px rgba(0, 0, 0, 0.18);
+}
+
+.floating-btn--call:active {
+  transform: scale(0.96);
+}
+
+/* WhatsApp Button — Official Brand Green */
+.floating-btn--whatsapp {
+  background: #25D366;
+  color: #FFFFFF;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.5), 0 2px 6px rgba(0, 0, 0, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+}
+
+.floating-btn--whatsapp:hover {
+  transform: scale(1.08);
+  background: #20BA5A;
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.65), 0 3px 8px rgba(0, 0, 0, 0.18);
+}
+
+.floating-btn--whatsapp:active {
+  transform: scale(0.96);
+}
+
+/* Responsive adjustments for Phone & Tablet */
+@media (max-width: 768px) {
+  .floating-actions {
+    bottom: 20px;
+    right: 16px;
+    gap: 10px;
+  }
+
+  .floating-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .floating-btn--call svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .floating-btn--whatsapp svg {
+    width: 24px;
+    height: 24px;
+  }
+}
