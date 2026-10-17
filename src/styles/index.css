@@ -519,10 +519,12 @@ input, textarea, select {
     padding: var(--space-3xl) 0;
   }
 
-  /* On tablet portrait (768px), keep 2 columns for a balanced layout */
+  /* On tablet & mobile (<=768px), keep 2-2 category wise layout */
   .grid--4,
-  .grid--3 {
+  .grid--3,
+  .grid--2 {
     grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
 
   .btn--lg {
@@ -540,17 +542,22 @@ input, textarea, select {
 }
 
 @media (max-width: 600px) {
-  /* On phones, collapse multi-column grids to 1 column */
+  /* On phones, keep 2-2 category wise layout with optimized compact spacing */
   .grid--4,
   .grid--3,
   .grid--2 {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 }
 
 @media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+
   .btn {
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1.25rem;
     font-size: var(--font-size-xs);
   }
 

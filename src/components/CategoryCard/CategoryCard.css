@@ -76,3 +76,22 @@
   color: var(--color-gold);
   letter-spacing: 0.03em;
 }
+
+@media (max-width: 600px) {
+  .cat-card__body {
+    padding: 10px 10px 12px;
+  }
+  .cat-card__title {
+    font-size: 0.92rem;
+    margin-bottom: 3px;
+  }
+  .cat-card__text {
+    font-size: 0.75rem;
+    line-height: 1.35;
+    -webkit-line-clamp: 2;
+  }
+  .cat-card__action {
+    margin-top: 6px;
+    font-size: 0.72rem;
+  }
+}
