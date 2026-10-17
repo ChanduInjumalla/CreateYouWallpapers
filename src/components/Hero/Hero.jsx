@@ -141,7 +141,7 @@ export default function Hero({
       </div>
 
       {/* Slide Content Area (100% Minimalist: Just Title & Curvy Pill Button) */}
-      <div className="hero-slider__content container">
+      <div className="hero-slider__content">
         <div className="hero-slider__text-box">
           <h1 key={activeSlide.id} className="hero-slider__title">
             {activeSlide.title}

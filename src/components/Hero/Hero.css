@@ -71,7 +71,8 @@
 
 /* Content Area — Cleanly Centered Vertically */
 .hero-slider__content {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 5;
   width: 100%;
   height: 100%;
@@ -81,6 +82,7 @@
   justify-content: center;
   padding: 100px 24px 60px;
   pointer-events: none;
+  box-sizing: border-box;
 }
 
 .hero-slider__text-box {
@@ -246,7 +248,16 @@
     margin-top: var(--header-height, 108px);
     height: 60vh;
     height: 60dvh;
-    min-height: 440px;
+    min-height: 460px;
+  }
+
+  .hero-slider__content {
+    justify-content: flex-end;
+    padding: 24px 20px 76px;
+  }
+
+  .hero-slider__indicators {
+    bottom: 22px;
   }
 }
 
@@ -255,16 +266,17 @@
     margin-top: var(--header-height, 108px);
     height: 60vh;
     height: 60dvh;
-    min-height: 400px;
+    min-height: 420px;
   }
 
   .hero-slider__content {
-    padding: 24px 16px 54px;
+    justify-content: flex-end;
+    padding: 20px 16px 70px;
   }
 
   .hero-slider__title {
-    font-size: clamp(1.75rem, 4.5vw, 2.4rem);
-    margin-bottom: 20px;
+    font-size: clamp(1.65rem, 4vw, 2.2rem);
+    margin-bottom: 16px;
   }
 
   .hero-slider__nav-btn {
@@ -279,6 +291,10 @@
   .hero-slider__nav-btn--next {
     right: 14px;
   }
+
+  .hero-slider__indicators {
+    bottom: 20px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -287,24 +303,25 @@
     margin-top: 56px;
     height: 60vh;
     height: 60svh;
-    min-height: 380px;
+    min-height: 400px;
   }
 
-  .hero-slider__content {
-    padding: 16px 14px 50px;
+  .hero-slider .hero-slider__content {
+    justify-content: flex-end;
+    padding: 16px 14px 76px;
   }
 
   .hero-slider__title {
-    font-size: 1.65rem;
-    line-height: 1.2;
-    margin-bottom: 16px;
+    font-size: 1.45rem;
+    line-height: 1.22;
+    margin-bottom: 14px;
     padding: 0 8px;
     max-width: 360px;
   }
 
   .hero-slider__pill-btn {
-    font-size: 12.5px;
-    padding: 12px 32px;
+    font-size: 12px;
+    padding: 11px 28px;
   }
 
   .hero-slider__nav-btn {
@@ -321,7 +338,8 @@
   }
 
   .hero-slider__indicators {
-    bottom: 14px;
+    bottom: 18px;
+    z-index: 12;
   }
 }
 
@@ -329,23 +347,25 @@
   .hero-slider {
     height: 60vh;
     height: 60svh;
-    min-height: 350px;
+    min-height: 380px;
   }
 
-  .hero-slider__content {
-    padding: 12px 10px 46px;
+  .hero-slider .hero-slider__content {
+    justify-content: flex-end;
+    padding: 12px 10px 72px;
   }
 
   .hero-slider__title {
-    font-size: 1.35rem;
-    max-width: 300px;
+    font-size: 1.22rem;
+    line-height: 1.22;
+    max-width: 310px;
     padding: 0 4px;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
 
   .hero-slider__pill-btn {
-    font-size: 11.5px;
-    padding: 11px 26px;
+    font-size: 11px;
+    padding: 10px 24px;
   }
 
   .hero-slider__nav-btn {
@@ -362,7 +382,8 @@
   }
 
   .hero-slider__indicators {
-    bottom: 12px;
+    bottom: 18px;
+    z-index: 12;
   }
 }
 
