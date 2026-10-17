@@ -240,3 +240,20 @@
     padding: 28px;
   }
 }
+
+@media (max-width: 600px) {
+  .fran-split {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+  .fran-form-card {
+    padding: 24px 18px;
+    border-radius: 14px;
+  }
+  .fran-grid-row {
+    grid-template-columns: 1fr;
+  }
+  .fran-hero__title {
+    font-size: 1.85rem;
+  }
+}

@@ -261,6 +261,13 @@
   .gallery-item {
     margin-bottom: 0.85rem;
   }
+  /* On touch devices, keep overlay captions visible without requiring hover */
+  .gallery-item__overlay {
+    opacity: 1;
+  }
+  .gallery-item__badge {
+    transform: translateY(0);
+  }
   .lightbox__nav {
     width: 42px;
     height: 42px;
@@ -277,5 +284,12 @@
 @media (max-width: 480px) {
   .gallery-masonry {
     columns: 1;
+  }
+  .gallery-filters {
+    gap: 6px;
+  }
+  .gallery-filter {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
   }
 }

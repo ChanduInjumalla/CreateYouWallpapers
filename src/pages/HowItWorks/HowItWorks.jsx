@@ -74,8 +74,8 @@ export default function HowItWorks() {
       <div className="container">
         <Breadcrumbs
           items={[
-            { label: 'Home', path: '/' },
-            { label: 'How It Works', path: '/how-it-works' },
+            { label: 'Home', url: '/' },
+            { label: 'How It Works' },
           ]}
         />
 

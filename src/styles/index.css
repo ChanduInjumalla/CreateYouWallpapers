@@ -488,7 +488,7 @@ input, textarea, select {
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
   :root {
-    --header-height: 70px;
+    --header-height: 108px;
     --font-size-3xl: 2rem;
     --font-size-4xl: 2.5rem;
     --font-size-5xl: 3rem;
@@ -504,7 +504,7 @@ input, textarea, select {
 
 @media (max-width: 768px) {
   :root {
-    --header-height: 60px;
+    --header-height: 56px;
     --font-size-2xl: 1.625rem;
     --font-size-3xl: 1.75rem;
     --font-size-4xl: 2rem;
@@ -519,10 +519,10 @@ input, textarea, select {
     padding: var(--space-3xl) 0;
   }
 
+  /* On tablet portrait (768px), keep 2 columns for a balanced layout */
   .grid--4,
-  .grid--3,
-  .grid--2 {
-    grid-template-columns: 1fr;
+  .grid--3 {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .btn--lg {
@@ -533,11 +533,32 @@ input, textarea, select {
   .section-header h2 {
     font-size: var(--font-size-2xl);
   }
+
+  .section-header p {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 600px) {
+  /* On phones, collapse multi-column grids to 1 column */
+  .grid--4,
+  .grid--3,
+  .grid--2 {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {
   .btn {
     padding: 0.75rem 1.5rem;
     font-size: var(--font-size-xs);
+  }
+
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .section-header {
+    margin-bottom: var(--space-xl);
   }
 }

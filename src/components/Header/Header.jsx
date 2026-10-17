@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import { wallpaperCategories } from '../../data/wallpapers';
 import { wallPanelCategories } from '../../data/wallPanels';
-import { megaMenuData } from '../../data/siteData';
+import { megaMenuData, rooms, services } from '../../data/siteData';
 import { getPhoneLink, getWhatsAppLink } from '../../data/business';
 import './Header.css';
 
@@ -17,6 +17,17 @@ export default function Header() {
   const [accordionState, setAccordionState] = useState({
     wallpaperComponents: true,
     panelComponents: true,
+  });
+
+  // Expandable accordions inside Mobile & Tablet drawer
+  const [mobileDrawerAccordions, setMobileDrawerAccordions] = useState({
+    wallpapers: false,
+    panels: false,
+    rooms: false,
+    services: false,
+    calculators: false,
+    gallery: false,
+    business: false,
   });
 
   const headerRef = useRef(null);
@@ -86,6 +97,13 @@ export default function Header() {
     e.preventDefault();
     e.stopPropagation();
     setAccordionState((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
+
+  const toggleDrawerAccordion = (key) => {
+    setMobileDrawerAccordions((prev) => ({
       ...prev,
       [key]: !prev[key],
     }));
@@ -770,60 +788,279 @@ export default function Header() {
           ============================================================ */}
       {mobileOpen && <div className="mobile-overlay" onClick={() => setMobileOpen(false)} />}
       <div className={`mobile-menu ${mobileOpen ? 'mobile-menu--open' : ''}`}>
-        <nav aria-label="Mobile navigation">
-          <Link to="/" className="mobile-menu__link" onClick={() => setMobileOpen(false)}>
-            Home
-          </Link>
-          <Link to="/about" className="mobile-menu__link" onClick={() => setMobileOpen(false)}>
-            About Us
-          </Link>
-          <Link to="/wallpapers" className="mobile-menu__link" onClick={() => setMobileOpen(false)}>
-            Wallpapers
-          </Link>
-          <Link to="/wall-panels" className="mobile-menu__link" onClick={() => setMobileOpen(false)}>
-            Wall Panels
-          </Link>
-          <Link to="/rooms" className="mobile-menu__link" onClick={() => setMobileOpen(false)}>
-            Rooms
-          </Link>
-          <Link to="/price-calculator" className="mobile-menu__link mobile-menu__link--accent" onClick={() => setMobileOpen(false)}>
-            Price Calculators
-          </Link>
-          <Link to="/how-it-works" className="mobile-menu__link" onClick={() => setMobileOpen(false)}>
-            How It Works / The Wall Journey
-          </Link>
-          <Link to="/franchise" className="mobile-menu__link" onClick={() => setMobileOpen(false)}>
-            Own a Franchise
-          </Link>
-          <Link to="/partner" className="mobile-menu__link" onClick={() => setMobileOpen(false)}>
-            Become a Partner
-          </Link>
-          <Link to="/gallery" className="mobile-menu__link" onClick={() => setMobileOpen(false)}>
-            Gallery &amp; Projects
-          </Link>
-          <Link to="/contact" className="mobile-menu__link" onClick={() => setMobileOpen(false)}>
-            Contact
-          </Link>
+        {/* Drawer Header with Logo and Close Button */}
+        <div className="mobile-menu__header">
+          <div className="mobile-menu__brand">
+            <span className="mobile-menu__brand-text">
+              Create<em>You</em> <span>WALLPAPERS</span>
+            </span>
+          </div>
+          <button
+            type="button"
+            className="mobile-menu__close-btn"
+            onClick={() => setMobileOpen(false)}
+            aria-label="Close mobile menu"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
 
-          <div className="mobile-menu__divider" />
+        {/* Quick CTA Actions at top of drawer */}
+        <div className="mobile-menu__actions-top">
           <Link
             to="/get-quote"
-            className="mobile-menu__link mobile-menu__link--cta"
+            className="mobile-menu__cta-pill"
             onClick={() => setMobileOpen(false)}
           >
             Consult Online Now
           </Link>
-          <a href={getPhoneLink()} className="mobile-menu__link">
-            Call Now: +91 91219 92350
-          </a>
-          <a
-            href={getWhatsAppLink()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mobile-menu__link"
-          >
-            WhatsApp Support
-          </a>
+          <div className="mobile-menu__quick-buttons">
+            <a href={getPhoneLink()} className="mobile-menu__quick-btn mobile-menu__quick-btn--call">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              Call
+            </a>
+            <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="mobile-menu__quick-btn mobile-menu__quick-btn--wa">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <nav className="mobile-menu__nav" aria-label="Mobile navigation">
+          {/* 1. Home */}
+          <Link to="/" className={`mobile-menu__link ${location.pathname === '/' ? 'active' : ''}`} onClick={() => setMobileOpen(false)}>
+            Home
+          </Link>
+
+          {/* 2. About Us */}
+          <Link to="/about" className={`mobile-menu__link ${location.pathname === '/about' ? 'active' : ''}`} onClick={() => setMobileOpen(false)}>
+            About Us
+          </Link>
+
+          {/* 3. Wallpapers Accordion (11 Styles) */}
+          <div className="mobile-menu__accordion">
+            <button
+              type="button"
+              className={`mobile-menu__accordion-btn ${mobileDrawerAccordions.wallpapers ? 'expanded' : ''}`}
+              onClick={() => toggleDrawerAccordion('wallpapers')}
+              aria-expanded={mobileDrawerAccordions.wallpapers}
+            >
+              <span className="mobile-menu__accordion-title">
+                Wallpapers
+                <span className="mobile-menu__badge">11 Styles</span>
+              </span>
+              <svg className={`mobile-menu__chevron ${mobileDrawerAccordions.wallpapers ? 'rotate' : ''}`} width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 1L5 5L9 1" /></svg>
+            </button>
+            {mobileDrawerAccordions.wallpapers && (
+              <div className="mobile-menu__submenu">
+                <Link to="/wallpapers" className="mobile-menu__sublink mobile-menu__sublink--hub" onClick={() => setMobileOpen(false)}>
+                  All Wallpapers Collection →
+                </Link>
+                {wallpaperCategories.map((w) => (
+                  <Link key={w.id} to={w.url} className={`mobile-menu__sublink ${location.pathname === w.url ? 'active' : ''}`} onClick={() => setMobileOpen(false)}>
+                    {w.name}
+                  </Link>
+                ))}
+                <Link to="/custom-wallpaper" className="mobile-menu__sublink mobile-menu__sublink--accent" onClick={() => setMobileOpen(false)}>
+                  ★ Custom Digital Murals
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* 4. 3D Wall Panels & Surfaces Accordion (11 Categories) */}
+          <div className="mobile-menu__accordion">
+            <button
+              type="button"
+              className={`mobile-menu__accordion-btn ${mobileDrawerAccordions.panels ? 'expanded' : ''}`}
+              onClick={() => toggleDrawerAccordion('panels')}
+              aria-expanded={mobileDrawerAccordions.panels}
+            >
+              <span className="mobile-menu__accordion-title">
+                Wall Panels &amp; Surfaces
+                <span className="mobile-menu__badge">11 Types</span>
+              </span>
+              <svg className={`mobile-menu__chevron ${mobileDrawerAccordions.panels ? 'rotate' : ''}`} width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 1L5 5L9 1" /></svg>
+            </button>
+            {mobileDrawerAccordions.panels && (
+              <div className="mobile-menu__submenu">
+                <Link to="/wall-panels" className="mobile-menu__sublink mobile-menu__sublink--hub" onClick={() => setMobileOpen(false)}>
+                  All Wall Panels Hub →
+                </Link>
+                {wallPanelCategories.map((p) => (
+                  <Link key={p.id} to={p.url} className={`mobile-menu__sublink ${location.pathname === p.url ? 'active' : ''}`} onClick={() => setMobileOpen(false)}>
+                    {p.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* 5. Rooms Accordion (10 Rooms) */}
+          <div className="mobile-menu__accordion">
+            <button
+              type="button"
+              className={`mobile-menu__accordion-btn ${mobileDrawerAccordions.rooms ? 'expanded' : ''}`}
+              onClick={() => toggleDrawerAccordion('rooms')}
+              aria-expanded={mobileDrawerAccordions.rooms}
+            >
+              <span className="mobile-menu__accordion-title">
+                Design By Room
+                <span className="mobile-menu__badge">10 Rooms</span>
+              </span>
+              <svg className={`mobile-menu__chevron ${mobileDrawerAccordions.rooms ? 'rotate' : ''}`} width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 1L5 5L9 1" /></svg>
+            </button>
+            {mobileDrawerAccordions.rooms && (
+              <div className="mobile-menu__submenu">
+                <Link to="/rooms" className="mobile-menu__sublink mobile-menu__sublink--hub" onClick={() => setMobileOpen(false)}>
+                  All Room Designs Hub →
+                </Link>
+                {rooms.map((r) => (
+                  <Link key={r.id} to={r.url} className={`mobile-menu__sublink ${location.pathname === r.url ? 'active' : ''}`} onClick={() => setMobileOpen(false)}>
+                    {r.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* 6. Services & Installation (7 Services) */}
+          <div className="mobile-menu__accordion">
+            <button
+              type="button"
+              className={`mobile-menu__accordion-btn ${mobileDrawerAccordions.services ? 'expanded' : ''}`}
+              onClick={() => toggleDrawerAccordion('services')}
+              aria-expanded={mobileDrawerAccordions.services}
+            >
+              <span className="mobile-menu__accordion-title">
+                Services &amp; Installation
+                <span className="mobile-menu__badge">7 Services</span>
+              </span>
+              <svg className={`mobile-menu__chevron ${mobileDrawerAccordions.services ? 'rotate' : ''}`} width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 1L5 5L9 1" /></svg>
+            </button>
+            {mobileDrawerAccordions.services && (
+              <div className="mobile-menu__submenu">
+                {services.map((s) => (
+                  <Link key={s.id} to={s.url} className={`mobile-menu__sublink ${location.pathname === s.url ? 'active' : ''}`} onClick={() => setMobileOpen(false)}>
+                    {s.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* 7. Price Calculators Accordion */}
+          <div className="mobile-menu__accordion">
+            <button
+              type="button"
+              className={`mobile-menu__accordion-btn ${mobileDrawerAccordions.calculators ? 'expanded' : ''}`}
+              onClick={() => toggleDrawerAccordion('calculators')}
+              aria-expanded={mobileDrawerAccordions.calculators}
+            >
+              <span className="mobile-menu__accordion-title">
+                Price Calculators
+                <span className="mobile-menu__badge mobile-menu__badge--gold">Instant</span>
+              </span>
+              <svg className={`mobile-menu__chevron ${mobileDrawerAccordions.calculators ? 'rotate' : ''}`} width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 1L5 5L9 1" /></svg>
+            </button>
+            {mobileDrawerAccordions.calculators && (
+              <div className="mobile-menu__submenu">
+                <Link to="/price-calculator" className="mobile-menu__sublink" onClick={() => setMobileOpen(false)}>
+                  Home Interior Wall Calculator
+                </Link>
+                <Link to="/price-calculator" className="mobile-menu__sublink" onClick={() => setMobileOpen(false)}>
+                  Wallpaper Cost Calculator
+                </Link>
+                <Link to="/price-calculator" className="mobile-menu__sublink" onClick={() => setMobileOpen(false)}>
+                  Wall Panel Cost Calculator
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* 8. How It Works / The Wall Journey */}
+          <Link to="/how-it-works" className={`mobile-menu__link ${location.pathname === '/how-it-works' ? 'active' : ''}`} onClick={() => setMobileOpen(false)}>
+            How It Works / The Wall Journey
+          </Link>
+
+          {/* 9. Gallery & Projects Accordion */}
+          <div className="mobile-menu__accordion">
+            <button
+              type="button"
+              className={`mobile-menu__accordion-btn ${mobileDrawerAccordions.gallery ? 'expanded' : ''}`}
+              onClick={() => toggleDrawerAccordion('gallery')}
+              aria-expanded={mobileDrawerAccordions.gallery}
+            >
+              <span className="mobile-menu__accordion-title">
+                Gallery &amp; Projects
+              </span>
+              <svg className={`mobile-menu__chevron ${mobileDrawerAccordions.gallery ? 'rotate' : ''}`} width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 1L5 5L9 1" /></svg>
+            </button>
+            {mobileDrawerAccordions.gallery && (
+              <div className="mobile-menu__submenu">
+                <Link to="/gallery" className="mobile-menu__sublink" onClick={() => setMobileOpen(false)}>
+                  Design Gallery
+                </Link>
+                <Link to="/projects" className="mobile-menu__sublink" onClick={() => setMobileOpen(false)}>
+                  Completed Projects
+                </Link>
+                <Link to="/before-after" className="mobile-menu__sublink" onClick={() => setMobileOpen(false)}>
+                  Before &amp; After Transformations
+                </Link>
+                <Link to="/inspiration" className="mobile-menu__sublink" onClick={() => setMobileOpen(false)}>
+                  Inspiration &amp; Ideas
+                </Link>
+                <Link to="/faq" className="mobile-menu__sublink" onClick={() => setMobileOpen(false)}>
+                  Frequently Asked Questions
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* 10. Business Partnerships */}
+          <div className="mobile-menu__accordion">
+            <button
+              type="button"
+              className={`mobile-menu__accordion-btn ${mobileDrawerAccordions.business ? 'expanded' : ''}`}
+              onClick={() => toggleDrawerAccordion('business')}
+              aria-expanded={mobileDrawerAccordions.business}
+            >
+              <span className="mobile-menu__accordion-title">
+                Partner With Us
+              </span>
+              <svg className={`mobile-menu__chevron ${mobileDrawerAccordions.business ? 'rotate' : ''}`} width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 1L5 5L9 1" /></svg>
+            </button>
+            {mobileDrawerAccordions.business && (
+              <div className="mobile-menu__submenu">
+                <Link to="/franchise" className="mobile-menu__sublink" onClick={() => setMobileOpen(false)}>
+                  Own a Franchise
+                </Link>
+                <Link to="/partner" className="mobile-menu__sublink" onClick={() => setMobileOpen(false)}>
+                  Become a Design / Contractor Partner
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* 11. Contact */}
+          <Link to="/contact" className={`mobile-menu__link ${location.pathname === '/contact' ? 'active' : ''}`} onClick={() => setMobileOpen(false)}>
+            Contact Us
+          </Link>
+
+          {/* Drawer Footer info card */}
+          <div className="mobile-menu__footer-card">
+            <div className="mobile-menu__footer-item">
+              <span className="mobile-menu__footer-label">EXPERIENCE STUDIO</span>
+              <p>Banjara Hills &amp; Jubilee Hills, Hyderabad</p>
+            </div>
+            <div className="mobile-menu__footer-item">
+              <span className="mobile-menu__footer-label">CONSULTATION HOURS</span>
+              <p>Mon – Sat: 9:30 AM – 8:00 PM</p>
+            </div>
+          </div>
         </nav>
       </div>
     </header>

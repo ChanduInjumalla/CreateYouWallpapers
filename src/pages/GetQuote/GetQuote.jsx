@@ -66,7 +66,7 @@ export default function GetQuote() {
           <div className="form-group"><label className="form-label">Your Name *</label><input type="text" className={`form-input ${errors.name ? 'error' : ''}`} value={form.name} onChange={u('name')} />{errors.name && <span className="form-error">{errors.name}</span>}</div>
           <div className="form-group"><label className="form-label">Phone / WhatsApp *</label><input type="tel" className={`form-input ${errors.phone ? 'error' : ''}`} value={form.phone} onChange={u('phone')} />{errors.phone && <span className="form-error">{errors.phone}</span>}</div>
           <div className="form-group"><label className="form-label">Email (optional)</label><input type="email" className="form-input" value={form.email} onChange={u('email')} /></div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-md)' }}>
+          <div className="home-quote-form__row">
             <div className="form-group"><label className="form-label">Locality</label><input type="text" className="form-input" value={form.locality} onChange={u('locality')} placeholder="Area / Locality" /></div>
             <div className="form-group"><label className="form-label">Room Type</label><select className="form-select" value={form.room} onChange={u('room')}><option value="">Select</option><option>Living Room</option><option>Bedroom</option><option>Kids Room</option><option>Dining Room</option><option>TV Wall</option><option>Pooja Room</option><option>Home Office</option><option>Foyer</option><option>Commercial</option><option>Other</option></select></div>
           </div>

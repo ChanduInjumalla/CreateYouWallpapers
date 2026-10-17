@@ -241,6 +241,13 @@
 /* ============================================================
    RESPONSIVE BREAKPOINTS
    ============================================================ */
+@media (max-width: 1024px) {
+  .hero-slider {
+    margin-top: var(--header-height, 108px);
+    height: calc(100vh - var(--header-height, 108px));
+  }
+}
+
 @media (max-width: 900px) {
   .hero-slider {
     margin-top: var(--header-height, 108px);
@@ -271,27 +278,29 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .hero-slider {
-    margin-top: 108px;
-    height: calc(100svh - 108px);
+    /* On mobile, subnav is hidden so header is just 56px */
+    margin-top: 56px;
+    height: calc(100svh - 56px);
     min-height: 480px;
   }
 
   .hero-slider__content {
-    padding: 20px 12px 64px;
+    padding: 20px 16px 60px;
   }
 
   .hero-slider__title {
-    font-size: 1.65rem;
+    font-size: 1.75rem;
     line-height: 1.2;
     margin-bottom: 20px;
     padding: 0 8px;
+    max-width: 360px;
   }
 
   .hero-slider__pill-btn {
     font-size: 13px;
-    padding: 13px 32px;
+    padding: 14px 36px;
   }
 
   .hero-slider__nav-btn {
@@ -311,3 +320,34 @@
     bottom: 18px;
   }
 }
+
+@media (max-width: 480px) {
+  .hero-slider {
+    min-height: 420px;
+  }
+
+  .hero-slider__title {
+    font-size: 1.5rem;
+    max-width: 300px;
+    padding: 0 4px;
+  }
+
+  .hero-slider__pill-btn {
+    font-size: 12px;
+    padding: 12px 28px;
+  }
+
+  .hero-slider__nav-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hero-slider__nav-btn--prev {
+    left: 6px;
+  }
+
+  .hero-slider__nav-btn--next {
+    right: 6px;
+  }
+}
+
