@@ -77,21 +77,36 @@
   letter-spacing: 0.03em;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .cat-card__body {
-    padding: 10px 10px 12px;
+    padding: 8px 10px 10px;
   }
   .cat-card__title {
-    font-size: 0.92rem;
-    margin-bottom: 3px;
+    font-size: 0.86rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+    line-height: 1.25;
   }
   .cat-card__text {
-    font-size: 0.75rem;
-    line-height: 1.35;
-    -webkit-line-clamp: 2;
+    display: none; /* Hide heavy description text for clean, minimalist category browsing */
   }
   .cat-card__action {
-    margin-top: 6px;
-    font-size: 0.72rem;
+    margin-top: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
   }
 }
+
+@media (max-width: 480px) {
+  .cat-card__body {
+    padding: 7px 8px 8px;
+  }
+  .cat-card__title {
+    font-size: 0.82rem;
+  }
+  .cat-card__action {
+    font-size: 0.68rem;
+    margin-top: 2px;
+  }
+}
+

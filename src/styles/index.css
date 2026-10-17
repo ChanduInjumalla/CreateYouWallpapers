@@ -533,11 +533,14 @@ input, textarea, select {
   }
 
   .section-header h2 {
-    font-size: var(--font-size-2xl);
+    font-size: 1.35rem;
+    font-weight: 600;
   }
 
   .section-header p {
-    font-size: var(--font-size-sm);
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: var(--color-text-light);
   }
 }
 

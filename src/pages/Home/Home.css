@@ -354,16 +354,14 @@
     grid-column: 1 / -1;
   }
   .home-discover__info {
-    padding: 12px 14px;
+    padding: 10px 12px;
   }
   .home-discover__info h3 {
-    font-size: 1.05rem;
-    margin-bottom: 4px;
+    font-size: 0.95rem;
+    margin-bottom: 3px;
   }
   .home-discover__info p {
-    font-size: 0.78rem;
-    margin-bottom: 8px;
-    line-height: 1.4;
+    display: none;
   }
 
   /* 2-2 Category layout for Wall Panels */
