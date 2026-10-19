@@ -80,76 +80,44 @@
   gap: 3px;
 }
 
-/* 3D Realistic Chrome & Cast White Metal */
+/* Clean, Crystal-Clear 3D Realistic Architectural Typography */
 .header__logo-brand {
   font-family: 'Outfit', var(--font-body), -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 1.32rem;
+  font-size: 1.28rem;
   font-weight: 800;
   letter-spacing: -0.015em;
   display: inline-flex;
   align-items: baseline;
   justify-content: center;
-  background: linear-gradient(
-    180deg,
-    #FFFFFF 0%,
-    #F4F6F9 24%,
-    #D7DCE5 46%,
-    #FFFFFF 50%,
-    #A2A9B7 62%,
-    #DFE3EA 86%,
-    #888F9E 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.65))
-          drop-shadow(0 2px 0 rgba(20, 24, 32, 0.95))
-          drop-shadow(0 3px 6px rgba(0, 0, 0, 0.8));
+  color: #FFFFFF;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.45),
+    0 2px 0 #0B0D12,
+    0 3px 5px rgba(0, 0, 0, 0.65);
 }
 
-/* 3D Realistic Cast 24K Gold with Metallic Reflection */
 .header__logo-brand em {
   font-style: normal;
   font-weight: 800;
-  background: linear-gradient(
-    180deg,
-    #FFF8DD 0%,
-    #FDE08C 22%,
-    #D4AF37 46%,
-    #FFF4C8 50%,
-    #A67E22 62%,
-    #E8C466 86%,
-    #6B4F10 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 1px 0 rgba(255, 245, 195, 0.75))
-          drop-shadow(0 2px 0 rgba(75, 50, 8, 0.95))
-          drop-shadow(0 3px 6px rgba(0, 0, 0, 0.8));
+  color: #E5C378;
+  text-shadow:
+    0 1px 0 rgba(255, 245, 195, 0.55),
+    0 2px 0 #4E3810,
+    0 3px 5px rgba(0, 0, 0, 0.65);
   margin-left: 2px;
 }
 
-/* 3D Realistic Polished Architectural Gold Plate */
 .header__logo-sub {
   font-family: 'Outfit', var(--font-body), -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.82rem;
-  font-weight: 900;
-  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  background: linear-gradient(
-    180deg,
-    #FFF6DC 0%,
-    #F5D17B 25%,
-    #D4AF37 46%,
-    #FFEDBC 50%,
-    #9C741B 64%,
-    #E1BA54 86%,
-    #614508 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 1px 0 rgba(255, 242, 185, 0.65))
-          drop-shadow(0 1.5px 0 rgba(68, 45, 6, 0.95))
-          drop-shadow(0 3px 5px rgba(0, 0, 0, 0.75));
+  color: #E0BA67;
+  text-shadow:
+    0 1px 0 rgba(255, 245, 195, 0.45),
+    0 1.5px 0 #3C2907,
+    0 2px 4px rgba(0, 0, 0, 0.65);
   text-align: center;
   width: 100%;
 }
