@@ -13,8 +13,17 @@ export default function Footer() {
         <div className="footer__grid">
           {/* Brand */}
           <div className="footer__col footer__col--brand">
-            <Link to="/" className="footer__logo">
-              Create<span className="footer__logo-accent">You</span>Wallpapers
+            <Link to="/" className="footer__logo" aria-label="CreateYouWallpapers Home">
+              <img
+                src="/images/logo/mz-logo.png"
+                alt="MZ Logo"
+                className="footer__logo-img"
+                width="42"
+                height="27"
+              />
+              <span className="footer__logo-title">
+                Create<span className="footer__logo-accent">You</span>Wallpapers
+              </span>
             </Link>
             <p className="footer__brand-text">
               Premium wallpaper, wall panel, and interior surface solutions for homes and commercial spaces in Hyderabad.

@@ -16,8 +16,23 @@
   font-weight: 600;
   color: var(--color-white);
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: var(--space-md);
+  transition: opacity 0.25s ease;
+}
+
+.footer__logo:hover {
+  opacity: 0.9;
+}
+
+.footer__logo-img {
+  height: 34px;
+  width: auto;
+  max-width: 52px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
 }
 
 .footer__logo-accent { color: var(--color-gold); }

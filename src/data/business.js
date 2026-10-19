@@ -11,8 +11,8 @@ export const BUSINESS = {
   country: 'India',
   
   /* Contact — update with verified details */
-  phone: '+91-XXXXXXXXXX',        // TODO: Add verified phone
-  whatsapp: '91XXXXXXXXXX',       // TODO: Add verified WhatsApp (digits only)
+  phone: '+91 9008397793',
+  whatsapp: '919008397793',
   email: 'info@createyouwallpapers.com', // TODO: Verify email
   
   /* Address — update when verified */

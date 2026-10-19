@@ -118,18 +118,13 @@ export default function Header() {
         <div className="header__inner container">
           {/* Logo */}
           <Link to="/" className="header__logo" aria-label="CreateYouWallpapers Home">
-            <svg
-              className="header__logo-icon"
-              viewBox="0 0 38 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <rect x="2" y="10" width="8" height="22" rx="1.5" fill="currentColor" opacity="0.3" />
-              <rect x="13" y="5" width="8" height="30" rx="1.5" fill="currentColor" opacity="0.55" />
-              <rect x="24" y="10" width="8" height="22" rx="1.5" fill="currentColor" opacity="0.85" />
-              <path d="M17 1 L21 5 L17 9 L13 5 Z" fill="currentColor" opacity="0.65" />
-            </svg>
+            <img
+              src="/images/logo/mz-logo.png"
+              alt="MZ Logo"
+              className="header__logo-img"
+              width="48"
+              height="31"
+            />
             <div className="header__logo-type">
               <span className="header__logo-brand">
                 Create<em>You</em>
@@ -790,11 +785,18 @@ export default function Header() {
       <div className={`mobile-menu ${mobileOpen ? 'mobile-menu--open' : ''}`}>
         {/* Drawer Header with Logo and Close Button */}
         <div className="mobile-menu__header">
-          <div className="mobile-menu__brand">
+          <Link to="/" className="mobile-menu__brand" onClick={() => setMobileOpen(false)}>
+            <img
+              src="/images/logo/mz-logo.png"
+              alt="MZ Logo"
+              className="mobile-menu__logo-img"
+              width="44"
+              height="29"
+            />
             <span className="mobile-menu__brand-text">
               Create<em>You</em> <span>WALLPAPERS</span>
             </span>
-          </div>
+          </Link>
           <button
             type="button"
             className="mobile-menu__close-btn"

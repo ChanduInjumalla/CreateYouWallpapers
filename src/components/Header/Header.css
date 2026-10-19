@@ -53,16 +53,19 @@
   opacity: 0.85;
 }
 
-.header__logo-icon {
-  width: 26px;
-  height: 28px;
-  color: #C9A96E;
+.header__logo-img {
+  height: 34px;
+  width: auto;
+  max-width: 56px;
+  object-fit: contain;
   flex-shrink: 0;
-  transition: color 0.3s ease;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+  transition: transform 0.25s ease, filter 0.25s ease;
 }
 
-.header__logo:hover .header__logo-icon {
-  color: #DBBF8A;
+.header__logo:hover .header__logo-img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 3px 8px rgba(201, 169, 110, 0.45));
 }
 
 .header__logo-type {
@@ -784,6 +787,21 @@
   padding: 16px 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   background: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.mobile-menu__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.mobile-menu__logo-img {
+  height: 30px;
+  width: auto;
+  max-width: 48px;
+  object-fit: contain;
   flex-shrink: 0;
 }
 
