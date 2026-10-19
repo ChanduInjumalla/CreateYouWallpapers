@@ -100,14 +100,12 @@
 
 .header__logo-sub {
   font-family: 'Outfit', var(--font-body), -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.62rem;
+  font-size: 0.78rem;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #D4AF37;
-  background: linear-gradient(90deg, #D4AF37 0%, #F5DFB4 50%, #C9A96E 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #E6C577;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   text-align: center;
   width: 100%;
 }
@@ -849,10 +847,10 @@
 
 .mobile-menu__brand-sub {
   font-family: 'Outfit', var(--font-body), sans-serif;
-  font-size: 0.58rem;
+  font-size: 0.74rem;
   font-weight: 800;
-  letter-spacing: 0.16em;
-  color: #B8956A;
+  letter-spacing: 0.12em;
+  color: #9C7A4A;
   text-transform: uppercase;
   text-align: center;
   width: 100%;
