@@ -793,9 +793,12 @@ export default function Header() {
               width="44"
               height="29"
             />
-            <span className="mobile-menu__brand-text">
-              Create<em>You</em> <span>WALLPAPERS</span>
-            </span>
+            <div className="mobile-menu__brand-type">
+              <span className="mobile-menu__brand-main">
+                Create<em>You</em>
+              </span>
+              <span className="mobile-menu__brand-sub">WALLPAPERS</span>
+            </div>
           </Link>
           <button
             type="button"

@@ -71,30 +71,45 @@
 .header__logo-type {
   display: flex;
   flex-direction: column;
-  line-height: 1;
-  gap: 1px;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.05;
+  gap: 2px;
 }
 
 .header__logo-brand {
-  font-family: var(--font-display, 'Playfair Display', serif);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #F2EFEB;
-  letter-spacing: -0.01em;
+  font-family: 'Outfit', var(--font-body), -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.24rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.015em;
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
 }
 
 .header__logo-brand em {
-  font-style: italic;
-  color: #C9A96E;
+  font-style: normal;
+  font-weight: 700;
+  color: #D4AF37;
+  background: linear-gradient(135deg, #F6E6C2 0%, #D4AF37 55%, #B89235 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: 1px;
 }
 
 .header__logo-sub {
-  font-family: var(--font-body, 'Inter', sans-serif);
-  font-size: 0.52rem;
-  font-weight: 500;
-  color: rgba(242, 239, 235, 0.45);
-  letter-spacing: 0.28em;
+  font-family: 'Outfit', var(--font-body), -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
+  color: #D4AF37;
+  background: linear-gradient(90deg, #D4AF37 0%, #F5DFB4 50%, #C9A96E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  width: 100%;
 }
 
 /* Desktop Main Nav */
@@ -805,27 +820,42 @@
   flex-shrink: 0;
 }
 
-.mobile-menu__brand-text {
-  font-family: var(--font-display);
+.mobile-menu__brand-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.05;
+  gap: 2px;
+}
+
+.mobile-menu__brand-main {
+  font-family: 'Outfit', var(--font-body), sans-serif;
   font-size: 1.15rem;
   font-weight: 700;
   color: #18181B;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  letter-spacing: -0.015em;
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
 }
 
-.mobile-menu__brand-text em {
+.mobile-menu__brand-main em {
   font-style: normal;
+  font-weight: 700;
   color: #B8956A;
+  margin-left: 1px;
 }
 
-.mobile-menu__brand-text span {
-  font-size: 0.52rem;
-  letter-spacing: 0.22em;
-  color: #8E8E93;
-  font-weight: 700;
-  margin-left: 2px;
+.mobile-menu__brand-sub {
+  font-family: 'Outfit', var(--font-body), sans-serif;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #B8956A;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
 }
 
 .mobile-menu__close-btn {
