@@ -45,30 +45,26 @@
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 14px;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  gap: 12px;
+  transition: opacity 0.25s ease;
 }
 
 .header__logo:hover {
-  opacity: 0.95;
-  transform: translateY(-1px);
+  opacity: 0.9;
 }
 
 .header__logo-img {
-  height: 42px;
+  height: 38px;
   width: auto;
-  max-width: 66px;
+  max-width: 58px;
   object-fit: contain;
   flex-shrink: 0;
-  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.6))
-          drop-shadow(0 1px 2px rgba(212, 175, 55, 0.35));
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
+  transition: transform 0.25s ease;
 }
 
 .header__logo:hover .header__logo-img {
-  transform: scale(1.05);
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.75))
-          drop-shadow(0 2px 5px rgba(212, 175, 55, 0.55));
+  transform: scale(1.03);
 }
 
 .header__logo-type {
@@ -76,48 +72,36 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  line-height: 1.05;
-  gap: 3px;
+  line-height: 1.08;
+  gap: 2px;
 }
 
-/* Clean, Crystal-Clear 3D Realistic Architectural Typography */
+/* Elegant Luxury Brand Typography */
 .header__logo-brand {
   font-family: 'Outfit', var(--font-body), -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 1.28rem;
-  font-weight: 800;
-  letter-spacing: -0.015em;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   display: inline-flex;
   align-items: baseline;
   justify-content: center;
   color: #FFFFFF;
-  text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.45),
-    0 2px 0 #0B0D12,
-    0 3px 5px rgba(0, 0, 0, 0.65);
 }
 
 .header__logo-brand em {
   font-style: normal;
-  font-weight: 800;
-  color: #E5C378;
-  text-shadow:
-    0 1px 0 rgba(255, 245, 195, 0.55),
-    0 2px 0 #4E3810,
-    0 3px 5px rgba(0, 0, 0, 0.65);
+  font-weight: 700;
+  color: #C9A96E;
   margin-left: 2px;
 }
 
 .header__logo-sub {
   font-family: 'Outfit', var(--font-body), -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.16em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #E0BA67;
-  text-shadow:
-    0 1px 0 rgba(255, 245, 195, 0.45),
-    0 1.5px 0 #3C2907,
-    0 2px 4px rgba(0, 0, 0, 0.65);
+  color: #C9A96E;
   text-align: center;
   width: 100%;
 }
@@ -859,10 +843,10 @@
 
 .mobile-menu__brand-sub {
   font-family: 'Outfit', var(--font-body), sans-serif;
-  font-size: 0.74rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  color: #9C7A4A;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #B8956A;
   text-transform: uppercase;
   text-align: center;
   width: 100%;
