@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useSEO } from '../../utils/seo';
 import Hero from '../../components/Hero/Hero';
@@ -19,22 +19,71 @@ export default function Home() {
   });
 
   const [showLead, setShowLead] = useState(false);
+  const lastClosedRef = useRef(Date.now());
 
+  // Initial popup on page load after 3 seconds
   useEffect(() => {
     try {
-      const dismissed = sessionStorage.getItem('cyw_lead_dismissed');
-      const submitted = sessionStorage.getItem('cyw_lead_submitted');
-      if (!dismissed && !submitted) {
-        const timer = setTimeout(() => setShowLead(true), 3000);
-        return () => clearTimeout(timer);
-      }
+      if (sessionStorage.getItem('cyw_lead_submitted')) return;
     } catch {}
+
+    const timer = setTimeout(() => {
+      try {
+        if (!sessionStorage.getItem('cyw_lead_submitted')) {
+          setShowLead(true);
+        }
+      } catch {
+        setShowLead(true);
+      }
+    }, 3000);
+
+    return () => clearTimeout(timer);
   }, []);
+
+  // Recurring popup every 15 seconds while browsing or scrolling when closed
+  useEffect(() => {
+    if (showLead) return;
+
+    try {
+      if (sessionStorage.getItem('cyw_lead_submitted')) return;
+    } catch {}
+
+    // Time-based trigger: shows every 15 seconds after being closed
+    const intervalTimer = setTimeout(() => {
+      try {
+        if (!sessionStorage.getItem('cyw_lead_submitted')) {
+          setShowLead(true);
+        }
+      } catch {
+        setShowLead(true);
+      }
+    }, 15000);
+
+    // Scroll-based trigger: while user is scrolling, re-trigger if 15s have elapsed
+    const handleScroll = () => {
+      if (Date.now() - lastClosedRef.current >= 15000) {
+        try {
+          if (!sessionStorage.getItem('cyw_lead_submitted')) {
+            setShowLead(true);
+          }
+        } catch {
+          setShowLead(true);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      clearTimeout(intervalTimer);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [showLead]);
 
   const openLead = () => setShowLead(true);
   const closeLead = () => {
+    lastClosedRef.current = Date.now();
     setShowLead(false);
-    try { sessionStorage.setItem('cyw_lead_dismissed', '1'); } catch {}
   };
 
   return (
